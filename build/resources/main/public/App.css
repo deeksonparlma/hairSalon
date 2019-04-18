@@ -2,10 +2,33 @@
 background-image:url("../images/bg2.png");
 height:639px;
 }
+#owner{
+background-image:url("../images/bg2.png");
+height:639px;
+}
+#stylist{
+background-image:url("../images/bg2.png");
+height:639px;
+}
 .title{
 padding-top:100px;
 padding-left:700px;
 }
 .title>p{
 font-size:100px;
+}
+#form{
+ width:400px;
+ float:right;
+ padding-right:50px;
+}
+#search{
+float:right;
+padding-right:50px;
+}
+nav{
+background-color:#4569;
+}
+#f{
+color:white;
 }
