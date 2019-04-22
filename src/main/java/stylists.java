@@ -3,33 +3,33 @@ import org.sql2o.Connection;
 import java.util.List;
 
 public class stylists {
-    private String mName;
-    private String mContact;
-    private String mEmail;
-    private String mGender;
-    private int id;
+    private String Name;
+    public String mContact;
+    public String mEmail;
+    public String mGender;
+    public int id;
 
-    public stylists(String name,String contact,String Email,String Gender){
-        mName= name;
-        mContact=contact;
-        mEmail=Email;
-        mGender=Gender;
+    public stylists(String name){
+        Name= name;
+//        mContact=contact;
+//        mEmail=Email;
+//        mGender=Gender;
 
     }
     //important//
     @Override
-    public boolean equals(Object otherstylists) {
-        if (!(otherstylists instanceof stylists)) {
+    public boolean equals(Object otherstylist) {
+        if (!(otherstylist instanceof stylists)) {
             return false;
         } else {
-            stylists newStylist = (stylists) otherstylists;
+            stylists newStylist = (stylists) otherstylist;
             return this.getName().equals(newStylist.getName()) &&
                     this.getId() == newStylist.getId();
         }
     }
 
     public static List<stylists> all() {
-        String sql = "SELECT id, name FROM stylists";
+        String sql = "SELECT id,name FROM stylists";
         try(Connection con = salonDatabase.sql2o.open()) {
             return con.createQuery(sql).executeAndFetch(stylists.class);
         }
@@ -38,7 +38,7 @@ public class stylists {
 
     public List<clients> getClients() {
         try(Connection con = salonDatabase.sql2o.open()) {
-            String sql = "SELECT * FROM clients where stylistId=:id";
+            String sql = "SELECT * FROM clients where id=:id";
             return con.createQuery(sql)
                     .addParameter("id", this.id)
                     .executeAndFetch(clients.class);
@@ -56,9 +56,9 @@ public class stylists {
 
     public void save() {
         try(Connection con = salonDatabase.sql2o.open()) {
-            String sql = "INSERT INTO stylists(name) VALUES (:name)";
+            String sql = "INSERT INTO stylists (name) VALUES (:name)";
             this.id = (int) con.createQuery(sql, true)
-                    .addParameter("name", this.mName)
+                    .addParameter("name", this.Name)
                     .executeUpdate()
                     .getKey();
         }
@@ -77,7 +77,7 @@ public class stylists {
     }
 
     public String getName() {
-        return mName;
+        return Name;
     }
     public int getId() {
         return id;

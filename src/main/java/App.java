@@ -3,6 +3,7 @@ import spark.template.velocity.VelocityTemplateEngine;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import static spark.Spark.*;
@@ -12,6 +13,16 @@ public class App {
     public static void main(String[] args) {
         staticFileLocation("/public");
 
+        //port manager//
+        ProcessBuilder process = new ProcessBuilder();
+        Integer port;
+        if (process.environment().get("PORT") != null) {
+            port = Integer.parseInt(process.environment().get("PORT"));
+        } else {
+            port = 4567;
+        }
+
+        port(port);
         //routes//
         String layout = "public/templates/layout.vtl";
 
@@ -41,12 +52,7 @@ public class App {
 
 
         //to edit//
-        get("/stylist", (request, response) -> {
-            Map<String, Object> model = new HashMap<String, Object>();
-            model.put("stylist", request.session().attribute("stylist"));
-            model.put("template", "public/templates/stylist.vtl");
-            return new ModelAndView(model, layout);
-        }, new VelocityTemplateEngine());
+
 
         get("/stylistForm", (request, response) -> {
             Map<String, Object> model = new HashMap<String, Object>();
@@ -69,25 +75,26 @@ public class App {
             return new ModelAndView(model, layout);
         }, new VelocityTemplateEngine());
 
+//        post("/stylists", (request,response) -> {
+//            Map<String, Object> model = new HashMap<String, Object>();
+//            String name = request.queryParams("name");
+//            stylists stylist = new stylists(name);new stylists(name);
+//            stylist.save();
+//
+//            model.put("template", "public/templates/stylist.vtl");
+//            return new ModelAndView(model, layout);
+//        }, new VelocityTemplateEngine());
         post("/stylists", (request,response) -> {
             Map<String, Object> model = new HashMap<String, Object>();
-
-            ArrayList<stylists> stylists = request.session().attribute("stylists");
-
-            if (stylists == null) {
-                stylists= new ArrayList<>();
-                request.session().attribute("stylists", stylists);
-            }
+//            ArrayList<stylists> stylists= request.session().attribute("stylists");
             String name = request.queryParams("name");
-            String contact = request.queryParams("contact");
-            String Email = request.queryParams("email");
-            String Gender = request.queryParams("gender");
-            stylists Stylist = new stylists(name,contact, Email,Gender);
-            stylists.add(Stylist);
+            stylists stylist = new stylists(name);
+            stylist.save();
+//            stylists.add(stylist);
 
-            model.put("template", "public/templates/stylist.vtl");
+
+            model.put("template", "public/templates/stylists.vtl");
             return new ModelAndView(model, layout);
         }, new VelocityTemplateEngine());
-
     }
 }
