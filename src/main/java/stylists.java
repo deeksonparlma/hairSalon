@@ -4,16 +4,16 @@ import java.util.List;
 
 public class stylists {
     private String Name;
-    public String Contact;
-    public String Email;
-    public String Gender;
-    public int id;
+    private String Contact;
+    private String Email;
+    private String Gender;
+    private int id;
 
-    public stylists(String name){
-        this.Name= name;
-//        mContact=contact;
-//        mEmail=Email;
-//        mGender=Gender;
+    public stylists(String name,String contact,String email,String gender){
+        this.setName(name);
+        setContact(contact);
+        setEmail(email);
+        setGender(gender);
 
     }
     //important//
@@ -27,6 +27,28 @@ public class stylists {
                     this.getId() == newStylist.getId();
         }
     }
+
+    @Override
+    protected Object clone() throws CloneNotSupportedException {
+        return super.clone();
+    }
+
+    @Override
+    public int hashCode() {
+        return super.hashCode();
+    }
+
+    @Override
+    protected void finalize() throws Throwable {
+        super.finalize();
+    }
+
+    @Override
+    public String toString() {
+        return super.toString();
+    }
+
+
 
     public static List<stylists> all() {
         String sql = "SELECT id,name FROM stylists";
@@ -47,20 +69,19 @@ public class stylists {
     public static stylists find(int id) {
         try(Connection con = salonDatabase.sql2o.open()) {
             String sql = "SELECT * FROM stylists where id=:id";
-            stylists stylists = con.createQuery(sql)
+            return con.createQuery(sql)
                     .addParameter("id", id)
                     .executeAndFetchFirst(stylists.class);
-            return stylists;
         }
     }
 
     public void save() {
         try(Connection con = salonDatabase.sql2o.open()) {
             String sql = "INSERT INTO stylists (name) VALUES (:name)";
-            this.id = (int) con.createQuery(sql, true)
-                    .addParameter("name", this.Name)
+            this.setId((int) con.createQuery(sql, true)
+                    .addParameter("name", this.getName())
                     .executeUpdate()
-                    .getKey();
+                    .getKey());
         }
     }
     //
@@ -81,5 +102,25 @@ public class stylists {
     }
     public int getId() {
         return id;
+    }
+
+    public void setName(String name) {
+        Name = name;
+    }
+
+    public void setContact(String contact) {
+        Contact = contact;
+    }
+
+    public void setEmail(String email) {
+        Email = email;
+    }
+
+    public void setGender(String gender) {
+        Gender = gender;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 }

@@ -45,7 +45,8 @@ public class App {
         //stylist//
         get("/stylists", (request, response) -> {
             Map<String, Object> model = new HashMap<String, Object>();
-            model.put("stylist", request.session().attribute("stylist"));
+            model.put("stylists", stylists.all());
+            model.put("stylist", request.session().attribute("stylists"));
             model.put("template", "public/templates/stylists.vtl");
             return new ModelAndView(model, layout);
         }, new VelocityTemplateEngine());
@@ -75,6 +76,13 @@ public class App {
             return new ModelAndView(model, layout);
         }, new VelocityTemplateEngine());
 
+        get("/stylist", (request, response) -> {
+            Map<String, Object> model = new HashMap<String, Object>();
+            model.put("stylist", request.session().attribute("stylists"));
+            model.put("template", "public/templates/stylist .vtl");
+            return new ModelAndView(model, layout);
+        }, new VelocityTemplateEngine());
+
 //        post("/stylists", (request,response) -> {
 //            Map<String, Object> model = new HashMap<String, Object>();
 //            String name = request.queryParams("name");
@@ -84,16 +92,15 @@ public class App {
 //            model.put("template", "public/templates/stylist.vtl");
 //            return new ModelAndView(model, layout);
 //        }, new VelocityTemplateEngine());
-        post("/stylists", (request,response) -> {
+        post("/post", (request,response) -> {
             Map<String, Object> model = new HashMap<String, Object>();
-//            ArrayList<stylists> stylists= request.session().attribute("stylists");
-            String name = request.queryParams("name");
-            stylists stylist = new stylists(name);
-            stylist.save();
-//            stylists.add(stylist);
-
-
-            model.put("template", "public/templates/stylists.vtl");
+            String name = request.queryParams("stylistName");
+            String contact = request.queryParams("stylistName");
+            String Email = request.queryParams("stylistName");
+            String gender = request.queryParams("stylistName");
+            stylists newStylist = new stylists(name,contact,Email,gender);
+            newStylist.save();
+            model.put("template", "public/templates/process.vtl");
             return new ModelAndView(model, layout);
         }, new VelocityTemplateEngine());
     }
