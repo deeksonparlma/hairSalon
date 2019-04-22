@@ -4,13 +4,13 @@ import java.util.List;
 
 public class stylists {
     private String Name;
-    public String mContact;
-    public String mEmail;
-    public String mGender;
+    public String Contact;
+    public String Email;
+    public String Gender;
     public int id;
 
     public stylists(String name){
-        Name= name;
+        this.Name= name;
 //        mContact=contact;
 //        mEmail=Email;
 //        mGender=Gender;
@@ -65,15 +65,15 @@ public class stylists {
     }
     //
     public String getContact() {
-        return mContact;
+        return Contact;
     }
 
     public String getEmail() {
-        return mEmail;
+        return Email;
     }
 
     public String getGender() {
-        return mGender;
+        return Gender;
     }
 
     public String getName() {
