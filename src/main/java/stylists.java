@@ -38,10 +38,7 @@ public class stylists {
         return super.hashCode();
     }
 
-    @Override
-    protected void finalize() throws Throwable {
-        super.finalize();
-    }
+
 
     @Override
     public String toString() {
