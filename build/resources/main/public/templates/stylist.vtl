@@ -1,11 +1,7 @@
 <h1>All Stylists</h1>
 
-#if ($post)
-    <ol>
-    #foreach ($stylist in $post)
-          <li> $stylist.getName() </li>
+<ul>
+  #foreach ( $stylist in $stylists  )
+    <li> $stylists.getName()   </li>
     #end
-    </ol>
-#else
-<p> Nothing to show</p>
-#end
+ </ul>
