@@ -54,11 +54,6 @@
       <change afterPath="$PROJECT_DIR$/../database/src/main/java/DB.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../database/src/main/resources/public/templates/index.vtl" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../database/src/main/resources/public/templates/layout.vtl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Procfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/public/templates/index.vtl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/public/templates/layout.vtl" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../hair_salon/.idea/gradle.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../hair_salon/.idea/misc.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../hair_salon/.idea/vcs.xml" afterDir="false" />
@@ -98,7 +93,6 @@
       <change afterPath="$PROJECT_DIR$/../../travel-agency" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../../triangle-tracker" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../../wildcats" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -142,18 +136,6 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/stylists.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="540">
-              <caret line="46" column="21" selection-start-line="46" selection-start-column="18" selection-end-line="46" selection-end-column="21" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/public/templates/stylists.vtl">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="195">
@@ -184,9 +166,22 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Procfile">
-          <provider selected="true" editor-type-id="text-editor" />
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="44" selection-start-column="44" selection-end-column="44" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="345">
+              <caret line="48" column="6" lean-forward="true" selection-start-line="48" selection-start-column="6" selection-end-line="48" selection-end-column="6" />
+            </state>
+          </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
@@ -277,6 +272,8 @@
         <option value="$PROJECT_DIR$/src/main/resources/public/templates/stylists.vtl" />
         <option value="$PROJECT_DIR$/src/main/java/clients.java" />
         <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/Procfile" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
@@ -329,6 +326,9 @@
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="clients" />
       <recent name="stylists" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -454,9 +454,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="25" width="1366" height="743" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49837133" visible="true" weight="0.24469697" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49837133" visible="true" weight="0.24469697" />
       <window_info id="Structure" order="1" sideWeight="0.50162864" side_tool="true" weight="0.23712121" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -470,7 +469,7 @@
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32899022" />
-      <window_info anchor="bottom" id="Terminal" order="7" visible="true" weight="0.32084692" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.32084692" />
       <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.5023548" side_tool="true" weight="0.38273615" />
       <window_info anchor="bottom" id="Version Control" order="9" weight="0.32899022" />
       <window_info anchor="bottom" id="Build" order="10" weight="0.32899022" />
@@ -697,7 +696,18 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Procfile">
-      <provider selected="true" editor-type-id="text-editor" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="44" selection-start-column="44" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="48" column="6" lean-forward="true" selection-start-line="48" selection-start-column="6" selection-end-line="48" selection-end-column="6" />
+        </state>
+      </provider>
     </entry>
   </component>
 </project>
