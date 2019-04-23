@@ -1,9 +1,30 @@
 <div id= "stylist">
-  <h1>List of Stylist</h1>
-  <ul>
+  <h1>List of Stylists</h1>
   #foreach ($stylist in $stylists)
-   <li> $stylist.getName() $stylist.getEmail()  $stylist.getGender()  </li>
-    #end
-   </ul>
 
+   <div id="stl" class="container">
+   <br><br>
+     <div class="row">
+           <div class="col-md-5">
+               <img src="https://cdn2.iconfinder.com/data/icons/business-management-52/96/Artboard_20-512.png" width="50px" height="50px">
+           </div>
+           <div class="col-md-4">
+               <p> <strong>Stylist  Name :</strong> $stylist.getName()  </p>
+           </div>
+           <div class="col-md-2">
+               <a href="/stylist/$stylist.getId()"> <button class="btn btn-info">View clients</button></a>
+           </div>
+     </div>
+
+     <div class="row">
+             <div class="col-md-5">
+               <p> <strong>Email : </strong> $stylist.getEmail() </p>
+             </div>
+             <div class="col-md-4">
+               <p> <strong> Gender : </strong>  $stylist.getGender()  </p>
+             </div>
+       </div>
+   </div>
+   <br>
+    #end
 </div>

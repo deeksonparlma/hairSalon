@@ -1,7 +1,13 @@
-<h1>All Stylists</h1>
-
-<ul>
-  #foreach ( $stylist in $stylists  )
-    <li> $stylist.getName()   $stylist.getEmail()  $stylist.getGender()</li>
-    #end
- </ul>
+<div class="container">
+  <div class="row">
+        <div class="col-md-3">
+            <img src="https://cdn2.iconfinder.com/data/icons/business-management-52/96/Artboard_20-512.png" width="150px" height="150px">
+        </div>
+        <div class="col-md-3">
+            <p> <strong> Stylist name : </strong> $stylist.getName() </p>
+        </div>
+  </div>
+ <div class="container">
+      <p> $client.getName() </p>
+ </div>
+</div>
