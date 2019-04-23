@@ -7,17 +7,15 @@ public class stylists {
     public String contact;
     private String email;
     private String gender;
-    public int id;
+    private int id;
 
     public stylists(String Sname,String Semail,String Sgender){
-        name= Sname;
-        email= Semail;
-        gender= Sgender;
+        this.name= Sname;
+         this.email= Semail;
+        this.gender= Sgender;
 
     }
-    public String getContact() {
-        return contact;
-    }
+
 
     public String getEmail() {
         return email;
@@ -33,91 +31,60 @@ public class stylists {
     public int getId() {
         return id;
     }
-//    //important//
-//    @Override
-//    public boolean equals(Object otherstylist) {
-//        if (!(otherstylist instanceof stylists)) {
-//            return false;
-//        } else {
-//            stylists newStylist = (stylists) otherstylist;
-//            return this.getName().equals(newStylist.getName()) &&
-//                    this.getId() == newStylist.getId();
-//        }
-//    }
+    //important//
+    @Override
+    public boolean equals(Object otherstylist) {
+        if (!(otherstylist instanceof stylists)) {
+            return false;
+        } else {
+            stylists newStylist = (stylists) otherstylist;
+            return this.getName().equals(newStylist.getName()) &&
+                    this.getId() == newStylist.getId();
+        }
+    }
+
+
+    public static List<stylists> all() {
+        String sql = "SELECT * FROM stylists";
+        try(Connection con = salonDatabase.sql2o.open()) {
+            return con.createQuery(sql).executeAndFetch(stylists.class);
+        }
+    }
+
+
+    public List<clients> getClients() {
+        try(Connection con = salonDatabase.sql2o.open()) {
+            String sql = "SELECT * FROM clients where id=:id";
+            return con.createQuery(sql)
+                    .addParameter("id", this.id)
+                    .executeAndFetch(clients.class);
+        }
+    }
+    public static stylists find(int id) {
+        try(Connection con = salonDatabase.sql2o.open()) {
+            String sql = "SELECT * FROM stylists where id=:id";
+            return con.createQuery(sql)
+                    .addParameter("id", id)
+                    .executeAndFetchFirst(stylists.class);
+        }
+    }
+
+    public void save() {
+        try(Connection con = salonDatabase.sql2o.open()) {
+            String sql = "INSERT INTO stylists (name, email, gender) VALUES (:name, :email, :gender)";
+            this.id= (int) con.createQuery(sql, true)
+                    .addParameter("name", this.name)
+                    .addParameter("email", this.email)
+                    .addParameter("gender", this.gender)
+                    .executeUpdate()
+                    .getKey();
+        }
+
+    }
+    //
 //
-//    @Override
-//    protected Object clone() throws CloneNotSupportedException {
-//        return super.clone();
-//    }
-//
-//    @Override
-//    public int hashCode() {
-//        return super.hashCode();
-//    }
-//
-//
-//
-//    @Override
-//    public String toString() {
-//        return super.toString();
-//    }
-//
-//
-//
-//    public static List<stylists> all() {
-//        String sql = "SELECT id,name FROM stylists";
-//        try(Connection con = salonDatabase.sql2o.open()) {
-//            return con.createQuery(sql).executeAndFetch(stylists.class);
-//        }
-//    }
-//
-//
-//    public List<clients> getClients() {
-//        try(Connection con = salonDatabase.sql2o.open()) {
-//            String sql = "SELECT * FROM clients where id=:id";
-//            return con.createQuery(sql)
-//                    .addParameter("id", this.id)
-//                    .executeAndFetch(clients.class);
-//        }
-//    }
-//    public static stylists find(int id) {
-//        try(Connection con = salonDatabase.sql2o.open()) {
-//            String sql = "SELECT * FROM stylists where id=:id";
-//            return con.createQuery(sql)
-//                    .addParameter("id", id)
-//                    .executeAndFetchFirst(stylists.class);
-//        }
-//    }
-//
-//    public void save() {
-//        try(Connection con = salonDatabase.sql2o.open()) {
-//            String sql = "INSERT INTO stylists (name) VALUES (:name)";
-//            this.setId((int) con.createQuery(sql, true)
-//                    .addParameter("name", this.getName())
-//                    .executeUpdate()
-//                    .getKey());
-//        }
-//    }
-//    //
-//
-//
-//    public void setName(String name) {
-//        Name = name;
-//    }
-//
-//    public void setContact(String contact) {
-//        Contact = contact;
-//    }
-//
-//    public void setEmail(String email) {
-//        Email = email;
-//    }
-//
-//    public void setGender(String gender) {
-//        Gender = gender;
-//    }
-//
-//    public void setId(int id) {
-//        this.id = id;
-//    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 }

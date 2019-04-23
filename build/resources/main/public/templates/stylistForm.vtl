@@ -1,8 +1,14 @@
 <h2>Add a stylist:</h2>
 <form action='/stylists' method='post'>
-   <input name="name" id="name" placeholder="Name">
-   <input name="email" id="email" placeholder="email">
-   <input name="gender" id="gender" placeholder="gender ">
+   <label>Stylist Name</label>
+   <input name="name" class="form-control" id="name" placeholder="Name"><br>
+   <label>Email</label>
+   <input name="email" class="form-control" id="email" placeholder="email">
+   <label>Gender</label>
+           <select class="form-control" name="gender" id="gender">
+               <option value="Male">Male</option>
+               <option value="Female">Female</option>
+           </select>
 
  <button type="submit" class="btn">Add</button>
 </form>

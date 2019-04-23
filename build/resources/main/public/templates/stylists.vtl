@@ -2,7 +2,7 @@
   <h1>List of Stylist</h1>
   <ul>
   #foreach ($stylist in $stylists)
-   <li> $stylist.getName() </li>
+   <li> $stylist.getName() $stylist.getEmail()  $stylist.getGender()  </li>
     #end
    </ul>
 
