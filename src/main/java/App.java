@@ -129,6 +129,15 @@ public class App {
             return new ModelAndView(model, layout);
         }, new VelocityTemplateEngine());
 
+        post("/clients/delete", (request, response) -> {
+            HashMap<String, Object> model = new HashMap<String, Object>();
+            clients client = clients.find(Integer.parseInt(request.queryParams("clientid")));
+            client.delete();
+            model.put("clients", client);
+            model.put("template", "public/templates/process.vtl");
+            return new ModelAndView(model, layout);
+        }, new VelocityTemplateEngine());
+
 //        post("/clients", (request,response) -> {
 //       HashMap<String, Object> model = new HashMap<String, Object>();
 //       String clientName = request.queryParams("client-name");

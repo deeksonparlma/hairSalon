@@ -40,5 +40,22 @@ public class clients {
                     .getKey();
         }
 
+
+    }
+    public void delete() {
+        try(Connection con = salonDatabase.sql2o.open()) {
+            String sql = "DELETE FROM clients WHERE id = :id;";
+            con.createQuery(sql)
+                    .addParameter("id", id)
+                    .executeUpdate();
+        }
+    }
+    public static clients find(int id) {
+        try(Connection con = salonDatabase.sql2o.open()) {
+            String sql = "SELECT * FROM clients where id = :id;";
+            return con.createQuery(sql)
+                    .addParameter("id", id)
+                    .executeAndFetchFirst(clients.class);
+        }
     }
 }

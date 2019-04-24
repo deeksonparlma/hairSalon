@@ -21,7 +21,14 @@
       <div class="col-md-6">
           <h3 class="text-info"> Clients</h3>
           #foreach($client in $clients)
-            <li> $client.getName() </li>
+            <li> $client.getName()
+
+            <form action="/clients/delete" method="post">
+            <input id="clientid" name="clientid" type="hidden" class="form-control" value="$client.getId()">
+              <button type="submit" class="btn btn-danger" id="delete-task">Delete client</button>
+            </form>
+
+            </li>
            #end
            </div>
 
