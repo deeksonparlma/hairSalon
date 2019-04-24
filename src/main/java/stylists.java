@@ -54,7 +54,7 @@ public class stylists {
 
     public List<clients> getClients() {
         try(Connection con = salonDatabase.sql2o.open()) {
-            String sql = "SELECT * FROM clients where id=:id";
+            String sql = "SELECT * FROM clients where stylistid=:id";
             return con.createQuery(sql)
                     .addParameter("id", this.id)
                     .executeAndFetch(clients.class);

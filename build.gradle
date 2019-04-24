@@ -3,6 +3,7 @@ apply plugin: 'application'
 
 archivesBaseName = "hairSalon"
 version = '1.0'
+applicationName = "hairSalon"
 mainClassName = "App"
 sourceCompatibility = 1.8
 
@@ -25,3 +26,5 @@ dependencies {
     compile group: 'org.sql2o', name: 'sql2o', version: '1.5.4'
     compile group: 'org.postgresql', name: 'postgresql', version: "9.4-1201-jdbc41"
 }
+defaultTasks = ['clean']
+task stage(dependsOn: ['clean', 'installDist'])

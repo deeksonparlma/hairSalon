@@ -7,7 +7,23 @@
             <p> <strong> Stylist name : </strong> $stylist.getName() </p>
         </div>
   </div>
- <div class="container">
-      <p> $client.getName() </p>
- </div>
+ <div class="row">
+      <div class="col-md-5">
+            <form action="/clients" method="post">
+            <div>
+            <input id="name" name="name" type="text" class="form-control" placeholder="Enter your Clients name"><br>
+            <input id="name" name="email" type="email" class="form-control" placeholder="Enter your Clients Email">
+            <input id="stylistid" name="stylistid" type="hidden" class="form-control" value="$stylist.getId()">
+            <button type="submit" class="btn aqua-gradient">Add client</button>
+            </div>
+            </form>
+      </div>
+      <div class="col-md-6">
+          <h3 class="text-info"> Clients</h3>
+          #foreach($client in $clients)
+            <li> $client.getName() </li>
+           #end
+           </div>
+
+   </div>
 </div>

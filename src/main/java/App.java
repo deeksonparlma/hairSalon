@@ -81,10 +81,16 @@ public class App {
             return new ModelAndView(model, layout);
         }, new VelocityTemplateEngine());
 
+
         get("/stylist/:id", (request, response) -> {
             Map<String, Object> model = new HashMap<String, Object>();
             stylists stylist = stylists.find(Integer.parseInt(request.params(":id")));
             model.put("stylist", stylist);
+            model.put("clients", stylist.getClients());
+            System.out.println("heyyy" +
+                    "yyyy" +
+                    "yyyy" +
+                    "y" + stylist.getClients());
             model.put("template", "public/templates/stylist.vtl");
             return new ModelAndView(model, layout);
         }, new VelocityTemplateEngine());
@@ -111,6 +117,27 @@ public class App {
             model.put("template", "public/templates/process.vtl");
             return new ModelAndView(model, layout);
         }, new VelocityTemplateEngine());
+
+        post("/clients", (request, response) -> {
+            Map<String, Object> model = new HashMap<>();
+            String name = request.queryParams("name");
+            String email = request.queryParams("email");
+            int stylistid = Integer.parseInt(request.queryParams("stylistid"));
+            clients newClient = new clients(name,email,stylistid);
+            newClient.save();
+            model.put("template", "public/templates/process.vtl");
+            return new ModelAndView(model, layout);
+        }, new VelocityTemplateEngine());
+
+//        post("/clients", (request,response) -> {
+//       HashMap<String, Object> model = new HashMap<String, Object>();
+//       String clientName = request.queryParams("client-name");
+//       stylists stylist = stylists.find(Integer.parseInt(request.queryParams("id")));
+//       Client newClient = new Client(clientName, stylist.getId());
+//       newClient.save();
+//       model.put("template", "public/templates/process.vtl");
+//            return new ModelAndView(model, layout);
+//        }, new VelocityTemplateEngine() );
 
 //        post("/stylists", (request, response) -> {
 //            Map<String, Object> model = new HashMap<>();
