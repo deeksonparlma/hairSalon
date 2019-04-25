@@ -30,7 +30,12 @@ cd build/classes/java/main
 ```
 java App
 ```
-
+* In PSQL:
+```
+CREATE DATABASE salon;
+CREATE TABLE clients (id serial PRIMARY KEY, name varchar,email varchar,stylistid int);
+CREATE TABLE stylists (id serial PRIMARY KEY, name varchar,email varchar,gender varchar);
+```
 ## BDD
 
 | Test               |       input       |     output       |
