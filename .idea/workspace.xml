@@ -93,6 +93,7 @@
       <change afterPath="$PROJECT_DIR$/../../travel-agency" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../../triangle-tracker" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../../wildcats" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/salonDatabase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/salonDatabase.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -144,11 +145,23 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="297">
+            <state relative-caret-position="324">
               <caret line="39" selection-start-line="39" selection-end-line="39" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/salonDatabase.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="45">
+              <caret line="3" selection-start-line="3" selection-end-line="3" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -179,7 +192,6 @@
       <list>
         <option value="$PROJECT_DIR$/src/test/java/stylistsTest.java" />
         <option value="$PROJECT_DIR$/src/main/resources/public/templates/stylist-process.vtl" />
-        <option value="$PROJECT_DIR$/src/main/java/salonDatabase.java" />
         <option value="$PROJECT_DIR$/src/main/resources/public/templates/index.vtl" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/build.gradle" />
@@ -201,6 +213,7 @@
         <option value="$PROJECT_DIR$/src/test/java/clientsTest.java" />
         <option value="$PROJECT_DIR$/Procfile" />
         <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/src/main/java/salonDatabase.java" />
       </list>
     </option>
   </component>
@@ -428,12 +441,12 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32899022" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4976452" weight="0.42345276" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.4976452" visible="true" weight="0.42345276" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32899022" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.32084692" />
+      <window_info anchor="bottom" id="Terminal" order="7" weight="0.3485342" />
       <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.5023548" side_tool="true" weight="0.38273615" />
       <window_info anchor="bottom" id="Version Control" order="9" weight="0.32899022" />
       <window_info anchor="bottom" id="Build" order="10" weight="0.32899022" />
@@ -503,13 +516,6 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/Client.java" />
     <entry file="file://$PROJECT_DIR$/src/main/resources/public/templates/client.vtl">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/salonDatabase.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="97" selection-start-line="3" selection-start-column="97" selection-end-line="3" selection-end-column="97" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/public/templates/layout.vtl">
       <provider selected="true" editor-type-id="text-editor">
@@ -660,8 +666,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
+        <state relative-caret-position="324">
           <caret line="39" selection-start-line="39" selection-end-line="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/salonDatabase.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" selection-start-line="3" selection-end-line="3" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
