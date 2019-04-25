@@ -81,6 +81,14 @@ public class stylists {
         }
 
     }
+    public void delete() {
+        try(Connection con = salonDatabase.sql2o.open()) {
+            String sql = "DELETE FROM stylists WHERE id = :id;";
+            con.createQuery(sql)
+                    .addParameter("id", id)
+                    .executeUpdate();
+        }
+    }
     //
 //
 

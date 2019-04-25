@@ -87,10 +87,6 @@ public class App {
             stylists stylist = stylists.find(Integer.parseInt(request.params(":id")));
             model.put("stylist", stylist);
             model.put("clients", stylist.getClients());
-            System.out.println("heyyy" +
-                    "yyyy" +
-                    "yyyy" +
-                    "y" + stylist.getClients());
             model.put("template", "public/templates/stylist.vtl");
             return new ModelAndView(model, layout);
         }, new VelocityTemplateEngine());
@@ -125,7 +121,7 @@ public class App {
             int stylistid = Integer.parseInt(request.queryParams("stylistid"));
             clients newClient = new clients(name,email,stylistid);
             newClient.save();
-            model.put("template", "public/templates/process.vtl");
+            model.put("template", "public/templates/success-client.vtl");
             return new ModelAndView(model, layout);
         }, new VelocityTemplateEngine());
 
@@ -134,7 +130,16 @@ public class App {
             clients client = clients.find(Integer.parseInt(request.queryParams("clientid")));
             client.delete();
             model.put("clients", client);
-            model.put("template", "public/templates/process.vtl");
+            model.put("template", "public/templates/success-delete.vtl");
+            return new ModelAndView(model, layout);
+        }, new VelocityTemplateEngine());
+
+        post("/stylist/delete", (request, response) -> {
+            HashMap<String, Object> model = new HashMap<String, Object>();
+            stylists stylist = stylists.find(Integer.parseInt(request.queryParams("stylistid")));
+            stylist.delete();
+            model.put("stylists", stylist);
+            model.put("template", "public/templates/success-delete-stylist.vtl");
             return new ModelAndView(model, layout);
         }, new VelocityTemplateEngine());
 

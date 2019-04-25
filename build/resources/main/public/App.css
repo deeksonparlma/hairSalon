@@ -1,13 +1,6 @@
-#start{
+#success,#start,#owner,#some,#stylist,#formsss{
 background-image:url("../images/bg2.png");
-height:639px;
-}
-#owner,#some{
-background-image:url("../images/bg2.png");
-height:639px;
-}
-#stylist{
-background-image:url("../images/bg2.png");
+background-position:left;
 height:639px;
 }
 .title{
@@ -44,4 +37,34 @@ color:white;
 background-color:white;
 width:500px;
 margin-right:10px;
+}
+#inp{
+display:none;
+}
+#formss{
+width:400px;
+float:right;
+background-color:#F5F4EE;
+border-radius:30px;
+}
+#big{
+font-size:60px;
+padding-right:600px;
+}
+#delete-client{
+height:30px;
+}
+#cl{
+width:400px;
+}
+table td {
+    font-size: 1.5rem;
+    font-weight: 300;
+}
+table th {
+    font-size: 2rem;
+    font-weight: 500;
+}
+body{
+background-image:url("../images/bg.jpg");
 }

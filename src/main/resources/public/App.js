@@ -1,6 +1,3 @@
-$(document).ready(function(){
-  $("#danger").click(function(){
-    $("form").slideToggle(800);
-  });
-
-  }
+$("#add").click(function(){
+  alert("The paragraph was clicked.");
+});

@@ -1,5 +1,5 @@
 <div id= "stylist">
-  <h1>List of Stylists</h1>
+  <p id="big" class="text-info">List of Stylists</p>
   #foreach ($stylist in $stylists)
 
    <div id="stl" class="container">
@@ -22,6 +22,12 @@
              </div>
              <div class="col-md-4">
                <p> <strong> Gender : </strong>  $stylist.getGender()  </p>
+             </div>
+             <div class="col-md-3">
+              <form action="/stylist/delete" method="post">
+                          <input id="stylistid" name="stylistid" type="hidden" class="form-control" value="$stylist.getId()">
+                            <button type="submit" class="btn btn-danger" id="delete-task">Delete Stylist</button>
+                          </form>
              </div>
        </div>
    </div>

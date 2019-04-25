@@ -9,7 +9,21 @@
        </div>
      </form>
 </nav>
-
-<a href="/stylistForm"><button class="btn btn-info">Add stylists</button></a>
+<a href="/stylistForm"><button id="add"  class="btn btn-info">Add stylists</button></a>
 <a href="/stylists"><button class="btn btn-info">Check my stylists</button></a>
+</div>
+<div id="inp">
+    <form action='/stylists' method='post'>
+       <label>Stylist Name</label>
+       <input name="name" class="form-control" id="name" placeholder="Name"><br>
+       <label>Email</label>
+       <input name="email" class="form-control" id="email" placeholder="email">
+       <label>Gender</label>
+               <select class="form-control" name="gender" id="gender">
+                   <option value="Male">Male</option>
+                   <option value="Female">Female</option>
+               </select>
+
+     <button type="submit" class="btn">Add</button>
+    </form>
 </div>
