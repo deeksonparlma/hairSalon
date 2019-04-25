@@ -68,3 +68,10 @@ table th {
 body{
 background-image:url("../images/bg.jpg");
 }
+#sec,#sec2{
+width:300px;
+height:500px;
+}
+#direct{
+margin-left:400px;
+}

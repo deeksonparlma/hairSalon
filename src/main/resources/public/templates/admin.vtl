@@ -1,29 +1,15 @@
 <div id="owner">
-<nav class="navbar navbar-expand-lg">
- <a href="/">Home</a>
-  <a href="/admin">Owner</a>
-   <a href="/stylists">Check Stylist</a>
- <form id="search" class="form-inline">
-       <div class="md-form my-0">
-         <input id="f" class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-       </div>
-     </form>
-</nav>
-<a href="/stylistForm"><button id="add"  class="btn btn-info">Add stylists</button></a>
-<a href="/stylists"><button class="btn btn-info">Check my stylists</button></a>
-</div>
-<div id="inp">
-    <form action='/stylists' method='post'>
-       <label>Stylist Name</label>
-       <input name="name" class="form-control" id="name" placeholder="Name"><br>
-       <label>Email</label>
-       <input name="email" class="form-control" id="email" placeholder="email">
-       <label>Gender</label>
-               <select class="form-control" name="gender" id="gender">
-                   <option value="Male">Male</option>
-                   <option value="Female">Female</option>
-               </select>
 
-     <button type="submit" class="btn">Add</button>
-    </form>
+    <div id="direct">
+      <div class="row">
+          <div class="col-md-4" id="sec">
+            <img src="https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-person-add-512.png" >
+            <a href="/stylistForm"><button id="add"  class="btn btn-info">Add stylists</button></a>
+          </div>
+          <div class="col-md-4" id="sec2">
+           <img src="https://www.cisl.cam.ac.uk/graduate-study/pgcerts/images/people-icon.png/image">
+            <a href="/stylists"><button class="btn btn-info">Check my stylists</button></a>
+          </div>
+      </div>
+    </div>
 </div>
