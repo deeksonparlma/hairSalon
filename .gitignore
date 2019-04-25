@@ -37,5 +37,3 @@ Thumbs.db
 ############
 build/
 .gradle/
-velocity.log
-velocity.log.1
